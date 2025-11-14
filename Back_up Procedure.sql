@@ -46,3 +46,11 @@ END;
 $BODY$;
 ALTER PROCEDURE public.backup_table(text, date, text)
     OWNER TO postgres;
+
+---Run etmek
+CALL backup_table(
+    table_name := 'CallLogs',
+    date_column := 'Date',
+    cutoff_date := '2025-11-14'
+);
+
